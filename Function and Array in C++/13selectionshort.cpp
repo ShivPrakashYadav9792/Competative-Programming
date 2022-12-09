@@ -19,7 +19,7 @@ void selectionSort(int input[], int n) {
 }
 
 int main() {
-	int input[] = {3, 1, 6, 9, 0, 4};
+	int input[] = {3, 1, 86, 9, 0, 9};
 	selectionSort(input, 6);
 	for(int i = 0; i < 6; i++) {
 		cout << input[i] << " ";

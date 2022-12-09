@@ -13,5 +13,5 @@ int main(){
     int ar[10];
     ar[0]=1;
     cout<<&ar[0]<<endl;
-    cout<<ar;
+    cout<<&ar;
 }
