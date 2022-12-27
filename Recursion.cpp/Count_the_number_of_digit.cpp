@@ -12,7 +12,7 @@ int count(int n)
 
 int main(){
     int n;
-    cout<<"enter the number"<<endl;
+    cout<<"enter the  number"<<endl;
     cin >> n;
     cout << count(n) << endl;
 }
