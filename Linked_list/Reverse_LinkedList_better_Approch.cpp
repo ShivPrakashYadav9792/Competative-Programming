@@ -71,8 +71,7 @@ Node* takeInput_Better() {
 		else {
 			tail -> next = newNode;
 			tail = tail -> next;
-			// OR
-			// tail = newNode;
+			
 		}
 
 		cin >> data;
