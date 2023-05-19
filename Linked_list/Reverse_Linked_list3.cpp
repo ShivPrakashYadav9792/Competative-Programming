@@ -10,7 +10,7 @@ class Node {
 		next = NULL;
 	}
 };
-
+/***************************************************/
 Node* reverseLL_3(Node *head) {
 	if(head == NULL || head -> next == NULL) {
 		return head;
@@ -23,8 +23,8 @@ Node* reverseLL_3(Node *head) {
 	head -> next = NULL;
 	return smallAns;
 }
-
-class Pair {
+/*******************************************/
+/*class Pair {
 	public :
 		
 			Node *head;
@@ -51,7 +51,7 @@ Pair reverseLL_2(Node *head) {
 
 Node* reverseLL_Better(Node *head) {
 	return reverseLL_2(head).head;
-}
+}*/
 
 Node* reverseLL(Node *head) {
 	if(head == NULL || head -> next == NULL) {
