@@ -84,6 +84,8 @@ int countBracketReversals(string input)
 int main()
 {
     string input;
+    cout << "Enter the string" << endl;
     cin >> input;
+    cout <<"the output is :";
     cout << countBracketReversals(input);
 }
