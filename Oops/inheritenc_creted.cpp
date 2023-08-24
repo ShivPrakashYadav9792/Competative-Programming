@@ -1,22 +1,5 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-
-    HondaCity h(4, 5);
-
-    //	Vehicle v;
-
-    // v.color = "Blue";
-    //  v.maxSpeed = 100;
-    //  v.numTyres = 4;
-
-    //	Car c(5);
-
-    // c.color = "Black";
-    //	c.numTyres = 4;
-    // c.numGears = 5;
-}
 
 class Vehicle
 {
@@ -82,3 +65,20 @@ public:
         cout << "Honda city destructor " << endl;
     }
 };
+int main()
+{
+
+    HondaCity h(4, 5);
+
+    //	Vehicle v;
+
+    // v.color = "Blue";
+    //  v.maxSpeed = 100;
+    //  v.numTyres = 4;
+
+    //	Car c(5);
+
+    // c.color = "Black";
+    //	c.numTyres = 4;
+    // c.numGears = 5;
+}
