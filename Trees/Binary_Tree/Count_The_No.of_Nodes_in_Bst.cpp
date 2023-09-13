@@ -43,43 +43,61 @@ BinaryTreeNode<int> *takeInputLevelWise()
     return root;
 }
 
-void printTree(BinaryTreeNode<int> *root)
+int numNodes(BinaryTreeNode<int> *root)
 {
     if (root == NULL)
     {
-        return;
+        return 0;
     }
-    cout << root->data << ":";
-    if (root->left != NULL)
-    {
-        cout << "L" << root->left->data;
-    }
-
-    if (root->right != NULL)
-    {
-        cout << "R" << root->right->data;
-    }
-    cout << endl;
-    printTree(root->left);
-    printTree(root->right);
+    return 1 + numNodes(root->left) + numNodes(root->right);
 }
 
-BinaryTreeNode<int> *takeInput()
+void printLevelWise(BinaryTreeNode<int> *root)
 {
-    int rootData;
-    cout << "Enter data" << endl;
-    cin >> rootData;
-    if (rootData == -1)
+    // Write your code here
+    if (root == NULL)
+        return;
+    queue<BinaryTreeNode<int> *> pendingNodes;
+    pendingNodes.push(root);
+    while (pendingNodes.size() != 0)
     {
-        return NULL;
+        BinaryTreeNode<int> *front = pendingNodes.front();
+        pendingNodes.pop();
+        if (front == NULL)
+        {
+            cout << "\n";
+            if (!pendingNodes.empty())
+            {
+                pendingNodes.push(NULL);
+            }
+        }
+        else
+        {
+            cout << front->data << ":";
+            cout << "L:";
+            if (front->left)
+            {
+                pendingNodes.push(front->left);
+                cout << front->left->data << ",";
+            }
+            else
+            {
+                cout << "-1"
+                     << ",";
+            }
+            cout << "R:";
+            if (front->right)
+            {
+                pendingNodes.push(front->right);
+                cout << front->right->data << "\n";
+            }
+            else
+            {
+                cout << "-1"
+                     << "\n";
+            }
+        }
     }
-
-    BinaryTreeNode<int> *root = new BinaryTreeNode<int>(rootData);
-    BinaryTreeNode<int> *leftChild = takeInput();
-    BinaryTreeNode<int> *rightChild = takeInput();
-    root->left = leftChild;
-    root->right = rightChild;
-    return root;
 }
 
 int main()
@@ -92,6 +110,8 @@ int main()
          root->right = node2;
     */
     BinaryTreeNode<int> *root = takeInputLevelWise();
-    printTree(root);
+    cout << "The NUmber of Nodes in Binary tree" << endl;
+    cout << numNodes(root) << " ";
+    printLevelWise(root);
     delete root;
 }
